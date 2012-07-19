@@ -1,0 +1,18 @@
+--- 
+cursor_positions: 
+  - :path: db/seeds.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-19 09:47:22 +07:00
+  - :path: config/mogoid.yml
+    :cursor_offset: 2149
+    :timestamp: 2012-07-19 09:52:48 +07:00
+  - :path: config/mongoid.yml
+    :cursor_offset: 0
+    :timestamp: 2012-07-19 09:57:22 +07:00
+  - :path: Gemfile
+    :cursor_offset: 51
+    :timestamp: 2012-07-19 09:48:25 +07:00
+  - :path: .gitignore
+    :cursor_offset: 204
+    :timestamp: 2012-07-19 10:00:02 +07:00
+files_to_retain: 0

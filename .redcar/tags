@@ -1,0 +1,8 @@
+1342666802
+Application	/home/train/rails_projects/hanoitour/config/application.rb	  class Application 
+ApplicationController	/home/train/rails_projects/hanoitour/app/controllers/application_controller.rb	class ApplicationController 
+ApplicationHelper	/home/train/rails_projects/hanoitour/app/helpers/application_helper.rb	module ApplicationHelper
+BrowsingTest	/home/train/rails_projects/hanoitour/test/performance/browsing_test.rb	class BrowsingTest 
+Hanoitour	/home/train/rails_projects/hanoitour/config/application.rb	module Hanoitour
+TestCase	/home/train/rails_projects/hanoitour/test/test_helper.rb	class ActiveSupport::TestCase
+test_homepage	/home/train/rails_projects/hanoitour/test/performance/browsing_test.rb	  def test_homepage
