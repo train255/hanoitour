@@ -41,5 +41,5 @@ cursor_positions:
     :timestamp: 2012-07-19 11:36:32 +07:00
   - :path: config/mongoid.yml
     :cursor_offset: 2471
-    :timestamp: 2012-07-19 11:45:02 +07:00
+    :timestamp: 2012-07-19 12:13:18 +07:00
 files_to_retain: 0

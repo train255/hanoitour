@@ -73,5 +73,3 @@ production:
       database: heroku_app6002044
       hosts:
         - ds035607.mongolab.com:35607
-      options:
-        consistency: :strong
