@@ -1,3 +1,4 @@
 --- 
-open_files: []
-
+open_files: 
+  - Gemfile
+  - config/mongoid.yml
