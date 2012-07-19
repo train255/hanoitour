@@ -1,0 +1,40 @@
+<h1>Editing place</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @place %> |
+<%= link_to 'Back', places_path %>
+
+<%= gmaps("map_options" => { "auto_zoom" => false, "zoom" => 16 },
+          "markers" => { "data" => @json, "options" => { "draggable" => true } }) %>
+          
+<% content_for :scripts do %>
+<script type="text/javascript" charset="utf-8">
+
+
+Gmaps.map.HandleDragend = function(pos) {
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({
+    latLng: pos
+  }, function(responses) {
+    if (responses && responses.length > 0) {
+      //alert(responses[0].formatted_address);
+      //console.log(responses[0]);
+      //abc = responses[0];
+      //alert(responses[0].geometry.location.$a);
+      $('#place_latitude').val(pos.lat());
+      $('#place_longitude').val(pos.lng())
+    } else {
+      alert('Cannot determine address at this location.');
+    }
+  });
+};
+
+Gmaps.map.callback = function() {
+  for (var i = 0; i <  this.markers.length; ++i) {
+     google.maps.event.addListener(Gmaps.map.markers[i].serviceObject, 'dragend',
+      function() { Gmaps.map.HandleDragend(this.getPosition()) });
+  }
+};        
+</script>
+<% end %>

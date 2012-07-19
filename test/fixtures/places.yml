@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  la: 1.5
+  lo: 1.5
+  address: MyString
+  image: MyString
+  info: MyString
+  rate: 1.5
+  numberOfRate: 1
+  gmaps: false
+
+two:
+  name: MyString
+  la: 1.5
+  lo: 1.5
+  address: MyString
+  image: MyString
+  info: MyString
+  rate: 1.5
+  numberOfRate: 1
+  gmaps: false

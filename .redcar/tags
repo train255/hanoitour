@@ -1,8 +1,24 @@
-1342666802
+1342669872
 Application	/home/train/rails_projects/hanoitour/config/application.rb	  class Application 
 ApplicationController	/home/train/rails_projects/hanoitour/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	/home/train/rails_projects/hanoitour/app/helpers/application_helper.rb	module ApplicationHelper
 BrowsingTest	/home/train/rails_projects/hanoitour/test/performance/browsing_test.rb	class BrowsingTest 
 Hanoitour	/home/train/rails_projects/hanoitour/config/application.rb	module Hanoitour
+Place	/home/train/rails_projects/hanoitour/app/models/place.rb	class Place
+PlaceTest	/home/train/rails_projects/hanoitour/test/unit/place_test.rb	class PlaceTest 
+PlacesController	/home/train/rails_projects/hanoitour/app/controllers/places_controller.rb	class PlacesController 
+PlacesControllerTest	/home/train/rails_projects/hanoitour/test/functional/places_controller_test.rb	class PlacesControllerTest 
+PlacesHelper	/home/train/rails_projects/hanoitour/app/helpers/places_helper.rb	module PlacesHelper
+PlacesHelperTest	/home/train/rails_projects/hanoitour/test/unit/helpers/places_helper_test.rb	class PlacesHelperTest 
 TestCase	/home/train/rails_projects/hanoitour/test/test_helper.rb	class ActiveSupport::TestCase
+create	/home/train/rails_projects/hanoitour/app/controllers/places_controller.rb	  def create
+destroy	/home/train/rails_projects/hanoitour/app/controllers/places_controller.rb	  def destroy
+edit	/home/train/rails_projects/hanoitour/app/controllers/places_controller.rb	  def edit
+gmaps4rails_address	/home/train/rails_projects/hanoitour/app/models/place.rb	  def gmaps4rails_address
+gmaps4rails_infowindow	/home/train/rails_projects/hanoitour/app/models/place.rb	  def gmaps4rails_infowindow
+gmaps4rails_sidebar	/home/train/rails_projects/hanoitour/app/models/place.rb	  def gmaps4rails_sidebar
+index	/home/train/rails_projects/hanoitour/app/controllers/places_controller.rb	  def index
+new	/home/train/rails_projects/hanoitour/app/controllers/places_controller.rb	  def new
+show	/home/train/rails_projects/hanoitour/app/controllers/places_controller.rb	  def show
 test_homepage	/home/train/rails_projects/hanoitour/test/performance/browsing_test.rb	  def test_homepage
+update	/home/train/rails_projects/hanoitour/app/controllers/places_controller.rb	  def update
