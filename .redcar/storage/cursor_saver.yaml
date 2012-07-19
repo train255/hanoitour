@@ -15,9 +15,6 @@ cursor_positions:
   - :path: app/views/places/_form.html.erb
     :cursor_offset: 624
     :timestamp: 2012-07-19 10:40:26 +07:00
-  - :path: config/mongoid.yml
-    :cursor_offset: 0
-    :timestamp: 2012-07-19 09:57:22 +07:00
   - :path: app/views/places/edit.html.erb
     :cursor_offset: 1155
     :timestamp: 2012-07-19 10:48:30 +07:00
@@ -42,4 +39,7 @@ cursor_positions:
   - :path: Gemfile
     :cursor_offset: 184
     :timestamp: 2012-07-19 10:01:04 +07:00
+  - :path: config/mongoid.yml
+    :cursor_offset: 2395
+    :timestamp: 2012-07-19 11:39:41 +07:00
 files_to_retain: 0
