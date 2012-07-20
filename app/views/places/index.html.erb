@@ -37,5 +37,6 @@
 <br />
 
 <%= link_to 'New Place', new_place_path %>
-<%= gmaps("markers" => {"data" => @json, "options" => {"list_container" => "markers_list" } }) %>
+<%= gmaps("map_options" => { "auto_zoom" => true },
+          "markers" => {"data" => @json, "options" => {"list_container" => "markers_list" } }) %>
 <ul id="markers_list">  </ul>

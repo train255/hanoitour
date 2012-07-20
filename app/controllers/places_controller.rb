@@ -7,7 +7,8 @@ class PlacesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @places }
+      # format.json { render json: @places }
+      format.json { render json: @places.as_json({ :version => :v2 }) }
     end
   end
 
@@ -15,10 +16,17 @@ class PlacesController < ApplicationController
   # GET /places/1.json
   def show
     @place = Place.find(params[:id])
+    @json = Place.find(params[:id]).to_gmaps4rails
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @place }
+      format.json { render json:
+        {id: @place.id,
+        name: @place.name,
+        latitude: @place.latitude,
+        longitude: @place.longitude } }
+
+      # format.json { render json: @place }
     end
   end
 
