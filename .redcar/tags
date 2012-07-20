@@ -1,4 +1,4 @@
-1342757740
+1342757959
 Application	/home/train/rails_projects/hanoitour/config/application.rb	  class Application 
 ApplicationController	/home/train/rails_projects/hanoitour/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	/home/train/rails_projects/hanoitour/app/helpers/application_helper.rb	module ApplicationHelper
