@@ -50,10 +50,10 @@ cursor_positions:
   - :path: Gemfile.lock
     :cursor_offset: 0
     :timestamp: 2012-07-20 10:31:28 +07:00
-  - :path: Gemfile
-    :cursor_offset: 199
-    :timestamp: 2012-07-20 10:39:54 +07:00
   - :path: config/mongoid.yml
     :cursor_offset: 2433
     :timestamp: 2012-07-20 11:02:41 +07:00
+  - :path: Gemfile
+    :cursor_offset: 43
+    :timestamp: 2012-07-20 10:54:54 +07:00
 files_to_retain: 0
