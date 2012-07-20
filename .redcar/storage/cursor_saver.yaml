@@ -42,4 +42,7 @@ cursor_positions:
   - :path: config/mongoid.yml
     :cursor_offset: 2471
     :timestamp: 2012-07-19 12:13:18 +07:00
+  - :path: app/controllers/application_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-19 09:47:22 +07:00
 files_to_retain: 0
