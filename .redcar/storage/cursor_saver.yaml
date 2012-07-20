@@ -36,24 +36,33 @@ cursor_positions:
   - :path: app/assets/javascripts/places.js.coffee
     :cursor_offset: 0
     :timestamp: 2012-07-19 10:08:24 +07:00
-  - :path: app/controllers/places_controller.rb
-    :cursor_offset: 157
-    :timestamp: 2012-07-20 09:52:28 +07:00
-    :selection_offset: 120
-    :block_selection_mode: false
   - :path: Gemfile.lock
     :cursor_offset: 0
     :timestamp: 2012-07-20 10:31:28 +07:00
   - :path: Gemfile
     :cursor_offset: 43
     :timestamp: 2012-07-20 10:54:54 +07:00
-  - :path: app/views/layouts/application.html.erb
-    :cursor_offset: 99
-    :timestamp: 2012-07-20 11:06:23 +07:00
   - :path: config/mongoid.yml
     :cursor_offset: 2424
     :timestamp: 2012-07-20 11:11:42 +07:00
   - :path: app/controllers/application_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-19 09:47:22 +07:00
+  - :path: app/views/layouts/application.html.erb
+    :cursor_offset: 99
+    :timestamp: 2012-07-20 11:06:23 +07:00
+    :selection_offset: 59
+    :block_selection_mode: false
+  - :path: app/controllers/places_controller.rb
+    :cursor_offset: 184
+    :timestamp: 2012-07-20 09:52:28 +07:00
+  - :path: config/environment.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-19 09:47:22 +07:00
+  - :path: config/application.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-19 09:47:22 +07:00
+  - :path: config/environments/production.rb
     :cursor_offset: 0
     :timestamp: 2012-07-19 09:47:22 +07:00
 files_to_retain: 0
