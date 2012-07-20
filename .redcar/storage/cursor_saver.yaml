@@ -24,25 +24,25 @@ cursor_positions:
   - :path: app/views/places/show.html.erb
     :cursor_offset: 83
     :timestamp: 2012-07-19 10:43:08 +07:00
-  - :path: app/controllers/places_controller.rb
-    :cursor_offset: 1837
-    :timestamp: 2012-07-19 10:51:12 +07:00
-  - :path: app/views/places/index.html.erb
-    :cursor_offset: 1018
-    :timestamp: 2012-07-19 10:46:26 +07:00
   - :path: app/models/place.rb
     :cursor_offset: 534
     :timestamp: 2012-07-19 10:47:14 +07:00
   - :path: app/views/layouts/application.html.erb
     :cursor_offset: 283
     :timestamp: 2012-07-19 10:21:17 +07:00
+  - :path: app/controllers/application_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-19 09:47:22 +07:00
   - :path: Gemfile
     :cursor_offset: 29
     :timestamp: 2012-07-19 12:10:56 +07:00
   - :path: config/mongoid.yml
-    :cursor_offset: 2471
-    :timestamp: 2012-07-19 12:13:18 +07:00
-  - :path: app/controllers/application_controller.rb
-    :cursor_offset: 0
-    :timestamp: 2012-07-19 09:47:22 +07:00
+    :cursor_offset: 2420
+    :timestamp: 2012-07-20 09:39:03 +07:00
+  - :path: app/controllers/places_controller.rb
+    :cursor_offset: 157
+    :timestamp: 2012-07-20 09:52:28 +07:00
+  - :path: app/views/places/index.html.erb
+    :cursor_offset: 1018
+    :timestamp: 2012-07-19 10:46:26 +07:00
 files_to_retain: 0
