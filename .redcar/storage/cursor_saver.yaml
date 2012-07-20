@@ -45,4 +45,7 @@ cursor_positions:
   - :path: app/views/places/index.html.erb
     :cursor_offset: 1018
     :timestamp: 2012-07-19 10:46:26 +07:00
+  - :path: app/assets/javascripts/gmaps4rails/gmaps4rails.base.js.coffee
+    :cursor_offset: 2705
+    :timestamp: 2012-07-19 10:03:53 +07:00
 files_to_retain: 0
