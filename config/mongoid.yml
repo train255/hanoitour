@@ -70,6 +70,4 @@ test:
 production:
   sessions:
     default:
-      database: heroku_app6002044
-      hosts:
-        - ds035607-a.mongolab.com:35607
+      uri: <%= ENV['MONGOLAB_URI'] %>
