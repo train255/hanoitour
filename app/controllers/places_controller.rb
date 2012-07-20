@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
     @places = Place.all
-    # @json = Place.all.to_gmaps4rails
+    @json = Place.all.to_gmaps4rails
 
     respond_to do |format|
       format.html # index.html.erb
