@@ -24,6 +24,7 @@ Gmaps.map.HandleDragend = function(pos) {
       //alert(responses[0].geometry.location.$a);
       $('#place_latitude').val(pos.lat());
       $('#place_longitude').val(pos.lng())
+      $('#place_address').val(responses[0].formatted_address)
     } else {
       alert('Cannot determine address at this location.');
     }
