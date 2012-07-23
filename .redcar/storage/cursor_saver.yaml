@@ -1,17 +1,11 @@
 --- 
 cursor_positions: 
-  - :path: db/seeds.rb
-    :cursor_offset: 0
-    :timestamp: 2012-07-19 09:47:22 +07:00
   - :path: config/mogoid.yml
     :cursor_offset: 2149
     :timestamp: 2012-07-19 09:52:48 +07:00
   - :path: .gitignore
     :cursor_offset: 204
     :timestamp: 2012-07-19 10:00:02 +07:00
-  - :path: config/routes.rb
-    :cursor_offset: 86
-    :timestamp: 2012-07-19 10:25:59 +07:00
   - :path: app/views/places/new.html.erb
     :cursor_offset: 0
     :timestamp: 2012-07-19 10:43:10 +07:00
@@ -24,26 +18,12 @@ cursor_positions:
   - :path: Gemfile.lock
     :cursor_offset: 0
     :timestamp: 2012-07-20 10:31:28 +07:00
-  - :path: config/mongoid.yml
-    :cursor_offset: 2424
-    :timestamp: 2012-07-20 11:11:42 +07:00
-  - :path: app/controllers/application_controller.rb
-    :cursor_offset: 0
-    :timestamp: 2012-07-19 09:47:22 +07:00
-  - :path: app/views/layouts/application.html.erb
-    :cursor_offset: 99
-    :timestamp: 2012-07-20 11:06:23 +07:00
-    :selection_offset: 59
-    :block_selection_mode: false
   - :path: config/environment.rb
     :cursor_offset: 0
     :timestamp: 2012-07-19 09:47:22 +07:00
   - :path: config/environments/production.rb
     :cursor_offset: 0
     :timestamp: 2012-07-19 09:47:22 +07:00
-  - :path: config/application.rb
-    :cursor_offset: 3069
-    :timestamp: 2012-07-20 11:27:23 +07:00
   - :path: app/assets/stylesheets/application.css
     :cursor_offset: 569
     :timestamp: 2012-07-20 11:19:19 +07:00
@@ -56,27 +36,48 @@ cursor_positions:
   - :path: app/helpers/places_helper.rb
     :cursor_offset: 0
     :timestamp: 2012-07-19 10:08:24 +07:00
-  - :path: app/views/places/_form.html.erb
-    :cursor_offset: 624
-    :timestamp: 2012-07-19 10:40:26 +07:00
   - :path: app/views/places/show.html.erb
     :cursor_offset: 184
     :timestamp: 2012-07-20 12:01:28 +07:00
-  - :path: app/controllers/places_controller.rb
-    :cursor_offset: 379
-    :timestamp: 2012-07-20 12:11:42 +07:00
-    :selection_offset: 377
-    :block_selection_mode: false
   - :path: app/views/places/edit.html.erb
     :cursor_offset: 1155
     :timestamp: 2012-07-20 12:00:56 +07:00
-  - :path: app/views/places/index.html.erb
-    :cursor_offset: 941
-    :timestamp: 2012-07-20 11:48:20 +07:00
+  - :path: app/views/places/_form.html.erb
+    :cursor_offset: 900
+    :timestamp: 2012-07-20 22:17:27 +07:00
+  - :path: app/controllers/application_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-19 09:47:22 +07:00
+  - :path: app/views/layouts/application.html.erb
+    :cursor_offset: 261
+    :timestamp: 2012-07-20 11:06:23 +07:00
+  - :path: config/routes.rb
+    :cursor_offset: 86
+    :timestamp: 2012-07-19 10:25:59 +07:00
   - :path: Gemfile
-    :cursor_offset: 238
-    :timestamp: 2012-07-20 22:06:09 +07:00
+    :cursor_offset: 209
+    :timestamp: 2012-07-22 17:09:42 +07:00
+  - :path: config/environments/development.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-19 09:47:22 +07:00
+  - :path: config/application.rb
+    :cursor_offset: 3069
+    :timestamp: 2012-07-20 11:27:23 +07:00
+  - :path: config/mongoid.yml
+    :cursor_offset: 446
+    :timestamp: 2012-07-20 11:11:42 +07:00
+  - :path: db/seeds.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-19 09:47:22 +07:00
+  - :path: app/views/places/index.html.erb
+    :cursor_offset: 377
+    :timestamp: 2012-07-20 11:48:20 +07:00
+  - :path: app/controllers/places_controller.rb
+    :cursor_offset: 411
+    :timestamp: 2012-07-22 21:19:02 +07:00
+    :selection_offset: 406
+    :block_selection_mode: false
   - :path: app/models/place.rb
-    :cursor_offset: 661
-    :timestamp: 2012-07-20 22:12:01 +07:00
+    :cursor_offset: 186
+    :timestamp: 2012-07-22 21:18:40 +07:00
 files_to_retain: 0

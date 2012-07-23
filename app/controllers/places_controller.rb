@@ -3,12 +3,12 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
     @places = Place.all
+    @places_json = Place.all.as_json({ :properties => :short })
     @json = Place.all.to_gmaps4rails
 
     respond_to do |format|
       format.html # index.html.erb
-      # format.json { render json: @places }
-      format.json { render json: @places.as_json({ :version => :v2 }) }
+      format.json { render json: @places_json }
     end
   end
 
@@ -16,17 +16,12 @@ class PlacesController < ApplicationController
   # GET /places/1.json
   def show
     @place = Place.find(params[:id])
+    @place_json = Place.find(params[:id]).as_json({ :properties => :all })
     @json = Place.find(params[:id]).to_gmaps4rails
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json:
-        {id: @place.id,
-        name: @place.name,
-        latitude: @place.latitude,
-        longitude: @place.longitude } }
-
-      # format.json { render json: @place }
+      format.json { render json: @place_json }
     end
   end
 

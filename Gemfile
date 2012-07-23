@@ -6,7 +6,7 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "mongoid", ">= 3.0.1"
+gem "mongoid", "3.0.1"
 gem 'bson_ext'
 gem 'gmaps4rails'
 gem "mongoid-cached-json"

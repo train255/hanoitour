@@ -123,7 +123,7 @@ DEPENDENCIES
   coffee-rails (= 3.2.2)
   gmaps4rails
   jquery-rails (= 2.0.0)
-  mongoid (>= 3.0.1)
+  mongoid (= 3.0.1)
   mongoid-cached-json
   rails (= 3.2.6)
   sass-rails (= 3.2.4)

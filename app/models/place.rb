@@ -14,13 +14,13 @@ class Place
   field :gmaps, type: Boolean
   
   json_fields \
-    :name => { :versions => [ :v2, :v3 ] },
-    :latitude => { :versions => [ :v2, :v3 ] },
-    :longitude => { :versions => [ :v2, :v3 ] },
-    :address => { :versions => [ :v2, :v3 ] },
-    :image => { :versions => :v3 },
-    :info => { :versions => :v3 }
-
+    :id => { :type => :reference },
+    :name => { :type => :reference },
+    :latitude => { :type => :reference },
+    :longitude => { :type => :reference },
+    :address => { :type => :reference },
+    :image => { :type => :reference, :properties => :public },
+    :info => { :type => :reference, :properties => :public }
 
   acts_as_gmappable
   
@@ -29,7 +29,7 @@ class Place
   end
   
   def gmaps4rails_sidebar
-    name
+    self.name
   end
   
   def gmaps4rails_infowindow

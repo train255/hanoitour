@@ -1,7 +1,4 @@
 --- 
 open_files: 
-  - app/views/places/index.html.erb
-  - app/views/places/edit.html.erb
   - app/controllers/places_controller.rb
   - app/models/place.rb
-  - app/views/places/show.html.erb
