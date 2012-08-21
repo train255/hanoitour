@@ -10,7 +10,9 @@ gem "mongoid", "3.0.1"
 gem 'bson_ext'
 gem 'gmaps4rails'
 gem "mongoid-cached-json"
-gem 'omniauth'
+gem 'devise'
+gem 'omniauth-google-oauth2'
+gem "pry"
 
 # Gems used only for assets and not required
 # in production environments by default.

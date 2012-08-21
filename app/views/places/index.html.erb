@@ -1,5 +1,9 @@
 <h1>Listing places</h1>
+<%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
 
+<% if user_signed_in? %>
+  <%= link_to "Sign out", destroy_user_session_path %>
+<% end %>
 <table>
   <tr>
     <th>Name</th>

@@ -1,4 +1,6 @@
 Hanoitour::Application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   get "users/show"
 
   root :to => 'places#index'
