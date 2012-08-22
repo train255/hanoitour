@@ -46,10 +46,10 @@
 
 <p>
   <b>Comments:</b><br/>
-  <% @comments.each do |comment| %>
-	<%= comment.content %>
-	<% if !comment.content.nil? %>
-	<%= link_to 'Destroy', [@place, comment], method: :delete, data: { confirm: 'Are you sure?' } %><br/>
+	<% if @comments.count != 0 %>
+	<% @comments.each do |comment| %>
+		<%= comment.content %>
+		<%= link_to 'Destroy', [@place, comment], method: :delete, data: { confirm: 'Are you sure?' } %><br/>
 	<% end %>
 	<% end %>
 </p>
