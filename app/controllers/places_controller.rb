@@ -19,10 +19,12 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @place_json = Place.find(params[:id]).as_json({ :properties => :all })
     @json = Place.find(params[:id]).to_gmaps4rails
+    @comments = @place.comments
+    @comment = @place.comments.build
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @place_json }
+      format.json { render json: [@place_json, @comments] }
     end
   end
 
@@ -79,6 +81,7 @@ class PlacesController < ApplicationController
   # DELETE /places/1.json
   def destroy
     @place = Place.find(params[:id])
+    @place.comments.delete_all
     @place.destroy
 
     respond_to do |format|

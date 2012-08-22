@@ -13,6 +13,8 @@ class Place
   field :numberOfRate, type: Integer
   field :gmaps, type: Boolean
   
+  has_many :comments
+  
   json_fields \
     :id => { :type => :reference },
     :name => { :type => :reference },

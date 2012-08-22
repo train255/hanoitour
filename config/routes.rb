@@ -1,11 +1,14 @@
 Hanoitour::Application.routes.draw do
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   get "users/show"
 
   root :to => 'places#index'
   
-  resources :places
+  resources :places do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
