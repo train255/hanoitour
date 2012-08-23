@@ -19,7 +19,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @place_json = Place.find(params[:id]).as_json({ :properties => :all })
     @json = Place.find(params[:id]).to_gmaps4rails
-    # @comments = @place.comments
+    @comments = @place.comments
     @comment = @place.comments.build
 
     respond_to do |format|
