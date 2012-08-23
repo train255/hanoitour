@@ -46,8 +46,8 @@
 
 <p>
   <b>Comments:</b><br/>
-	<% if @comments.count != 0 %>
 	<% @comments.each do |comment| %>
+	<% if comment.content.present? %>
 		<%= comment.content %>
 		<%= link_to 'Destroy', [@place, comment], method: :delete, data: { confirm: 'Are you sure?' } %><br/>
 	<% end %>
