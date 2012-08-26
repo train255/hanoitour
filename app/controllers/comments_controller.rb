@@ -23,14 +23,14 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   # GET /comments/new.json
-  def new
-    @comment = Comment.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: [@place, @comment] }
-    end
-  end
+  # def new
+  #   @comment = Comment.new
+  # 
+  #   respond_to do |format|
+  #     format.html # new.html.erb
+  #     format.json { render json: [@place, @comment] }
+  #   end
+  # end
 
   # GET /comments/1/edit
   # def edit
@@ -42,15 +42,34 @@ class CommentsController < ApplicationController
   def create
     # binding.pry
     @place = Place.find(params[:place_id])
-    @comment = @place.comments.build(params[:comment])
-
+    
+    token = params[:comment][:access_token]
+    url = URI.parse('https://www.googleapis.com/oauth2/v1/tokeninfo?access_token='+token)
+    connection = Net::HTTP.new(url.host, url.port)
+    connection.use_ssl = true
+    response = connection.request_get(url.path + '?' + url.query)
+    data = JSON.parse(response.body)
+    
+    if data["error"].present?
+      @result = data["error"]
+      @success = false
+    else
+      @result = data["email"]
+      @user = User.find_for_server(@result)
+     
+      if @user.present?
+        @comment = @place.comments.build(params[:comment])
+        @success = @comment.save
+      end
+    end
+    
     respond_to do |format|
-      if @comment.save
+      if @success
         format.html { redirect_to @place, notice: 'Comment was successfully created.' }
         format.json { render json: @place, status: :created, location: @comment }
       else
-        format.html { render action: "new" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.html { redirect_to @place, notice: @result }
+        format.json { render json: {error: "invalid_token"} }
       end
     end
   end
