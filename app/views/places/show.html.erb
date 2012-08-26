@@ -54,6 +54,7 @@
 	<% end %>
 </p>
 
+<b>Token: </b><% @token %>
 
 <%= form_for [@place, @comment] do |f| %>
   <% if @comment.errors.any? %>

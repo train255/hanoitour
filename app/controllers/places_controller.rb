@@ -21,6 +21,7 @@ class PlacesController < ApplicationController
     @json = Place.find(params[:id]).to_gmaps4rails
     @comments = @place.comments
     @comment = @place.comments.build
+    @token = params[:access_token]
 
     respond_to do |format|
       format.html # show.html.erb
