@@ -58,7 +58,7 @@ class CommentsController < ApplicationController
       @user = User.find_for_server(@result)
      
       if @user.present?
-        @comment = @place.comments.build(params[:comment])
+        @comment = @place.comments.build(params[:comment].merge({user_id: @user.id}))
         @success = @comment.save
       end
     end

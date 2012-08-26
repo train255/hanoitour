@@ -51,6 +51,7 @@
   <b>Comments:</b><br/>
 	<% @comments.each do |comment| %>
 	<% if comment.content.present? %>
+		<%= comment.user.email %>
 		<%= comment.content %>
 		<%= link_to 'Destroy', [@place, comment], method: :delete, data: { confirm: 'Are you sure?' } %><br/>
 	<% end %>
@@ -70,7 +71,7 @@
   <% end %>
 
   <div class="field">
-		<%= f.hidden_field :access_token %>
+		<%= f.hidden_field :access_token, value: "" %>
     <b>Comment</b><br />
      <%= f.text_area :content, size: "60x5"%>
   </div>
