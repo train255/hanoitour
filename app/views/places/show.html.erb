@@ -48,17 +48,16 @@
   <b>Comments:</b><br/>
 	<% @comments.each do |comment| %>
 	<% if comment.content.present? %>
+		<%= comment.access_token %>
 		<%= comment.content %>
 		<%= link_to 'Destroy', [@place, comment], method: :delete, data: { confirm: 'Are you sure?' } %><br/>
 	<% end %>
 	<% end %>
 </p>
 
-<b>Token: </b><%= @token %>
-
 <%= form_for [@place, @comment] do |f| %>
   <% if @comment.errors.any? %>
-    <div id="error_explanation">
+	<div id="error_explanation">
       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
       <ul>
       <% @comment.errors.full_messages.each do |msg| %>
@@ -69,6 +68,7 @@
   <% end %>
 
   <div class="field">
+		<b>Token: </b><%= f.text_field :access_token %>
     <b>Comment</b><br />
      <%= f.text_area :content, size: "60x5"%>
   </div>
