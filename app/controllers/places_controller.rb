@@ -83,6 +83,7 @@ class PlacesController < ApplicationController
   def destroy
     @place = Place.find(params[:id])
     @place.comments.delete_all
+    @place.rates.delete_all
     @place.destroy
 
     respond_to do |format|
