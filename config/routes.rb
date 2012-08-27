@@ -6,9 +6,18 @@ Hanoitour::Application.routes.draw do
 
   root :to => 'places#index'
   
+  
   resources :places do
+    # collection do //Duong dan la /places/rate
+    #   post :rate
+    # end
     resources :comments
+    resources :rates
+    member do
+      post :rate_and_comment #Duong dan la /places/:id/rate_and_comment
+    end
   end
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

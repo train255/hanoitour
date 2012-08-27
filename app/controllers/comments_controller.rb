@@ -39,40 +39,40 @@ class CommentsController < ApplicationController
 
   # POST /comments
   # POST /comments.json
-  def create
-    # binding.pry
-    @place = Place.find(params[:place_id])
-    
-    token = params[:comment][:access_token]
-    url = URI.parse('https://www.googleapis.com/oauth2/v1/tokeninfo?access_token='+token)
-    connection = Net::HTTP.new(url.host, url.port)
-    connection.use_ssl = true
-    response = connection.request_get(url.path + '?' + url.query)
-    data = JSON.parse(response.body)
-    
-    if data["error"].present?
-      @result = data["error"]
-      @success = false
-    else
-      @result = data["email"]
-      @user = User.find_for_server(@result)
-     
-      if @user.present?
-        @comment = @place.comments.build(params[:comment].merge({user_id: @user.id}))
-        @success = @comment.save
-      end
-    end
-    
-    respond_to do |format|
-      if @success
-        format.html { redirect_to @place, notice: 'Comment was successfully created.' }
-        format.json { render json: @place, status: :created, location: @comment }
-      else
-        format.html { redirect_to @place, notice: @result }
-        format.json { render json: {error: "invalid_token"} }
-      end
-    end
-  end
+  # def create
+  #   # binding.pry
+  #   @place = Place.find(params[:place_id])
+  #   
+  #   token = params[:comment][:access_token]
+  #   url = URI.parse('https://www.googleapis.com/oauth2/v1/tokeninfo?access_token='+token)
+  #   connection = Net::HTTP.new(url.host, url.port)
+  #   connection.use_ssl = true
+  #   response = connection.request_get(url.path + '?' + url.query)
+  #   data = JSON.parse(response.body)
+  #   
+  #   if data["error"].present?
+  #     @result = data["error"]
+  #     @success = false
+  #   else
+  #     @result = data["email"]
+  #     @user = User.find_for_server(@result)
+  #    
+  #     if @user.present?
+  #       @comment = @place.comments.build(params[:comment].merge({user_id: @user.id}))
+  #       @success = @comment.save
+  #     end
+  #   end
+  #   
+  #   respond_to do |format|
+  #     if @success
+  #       format.html { redirect_to @place, notice: 'Comment was successfully created.' }
+  #       format.json { render json: @place, status: :created, location: @comment }
+  #     else
+  #       format.html { redirect_to @place, notice: @result }
+  #       format.json { render json: {error: "invalid_token"} }
+  #     end
+  #   end
+  # end
 
   # PUT /comments/1
   # PUT /comments/1.json

@@ -9,11 +9,14 @@ class Place
   field :address, type: String
   field :image, type: String
   field :info, type: String
-  field :rate, type: Float
-  field :numberOfRate, type: Integer
   field :gmaps, type: Boolean
   
+  attr_accessor :comment_content
+  attr_accessor :access_token
+  attr_accessor :user_rate_value
+  
   has_many :comments
+  has_many :rates
   
   json_fields \
     :id => { :type => :reference },
@@ -36,6 +39,14 @@ class Place
   
   def gmaps4rails_infowindow
     "<h1>#{name}</h1>"
+  end
+  
+  def average_rating
+    if rates.count > 0
+      rates.map { |rate| rate.value }.inject{ |sum, el| sum + el }.to_f / rates.count
+    else
+      0
+    end
   end
   
 end

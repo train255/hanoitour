@@ -16,15 +16,16 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
+    # binding.pry
     @place = Place.find(params[:id])
     @place_json = Place.find(params[:id]).as_json({ :properties => :all })
     @json = Place.find(params[:id]).to_gmaps4rails
     @comments = @place.comments
-    @comment = @place.comments.build
+    @rates = @place.rates
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: [@place_json, @comments] }
+      format.json { render json: {:place_info => @place_json, :comments => @comments, :rating => @place.average_rating} }
     end
   end
 
@@ -89,4 +90,56 @@ class PlacesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def rate_and_comment
+    @place = Place.find(params[:id])
+    
+    token = params[:place][:access_token]
+    url = URI.parse('https://www.googleapis.com/oauth2/v1/tokeninfo?access_token='+token)
+    connection = Net::HTTP.new(url.host, url.port)
+    connection.use_ssl = true
+    response = connection.request_get(url.path + '?' + url.query)
+    data = JSON.parse(response.body)
+    
+    if data["error"].present?
+      @result = data["error"]
+      @success = false
+    else
+      @result = data["email"]
+      @user = User.find_for_server(@result)
+      if @user.present?
+        #rate
+        if Rate.where(place_id: @place.id, user_id: @user.id).count == 1
+          @rate = Rate.where(place_id: @place.id, user_id: @user.id).first
+          @rate.update_attribute(:value, params[:place][:user_rate_value])
+        else
+          @rate = @place.rates.build
+          @rate.value = params[:place][:user_rate_value]
+          @rate.user_id = @user.id
+        end
+        
+        #comment
+        @comment = @place.comments.build
+        @comment.content = params[:place][:comment_content]
+        @comment.user = @user
+        
+        if @comment.save && @rate.save
+          @success = true
+        else
+          @success = false
+        end
+      end
+    end
+    
+    respond_to do |format|
+      if @success
+        format.html { redirect_to @place, notice: 'Comment was successfully created.' }
+        format.json { render json: @place, status: :created, location: @comment }
+      else
+        format.html { redirect_to @place, notice: @result }
+        format.json { render json: {error: "invalid_token"} }
+      end
+    end
+  end
+  
 end
